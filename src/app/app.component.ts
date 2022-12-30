@@ -25,6 +25,8 @@ export class AppComponent {
 
   touch: boolean = false;
 
+  navItems: Array<string> = ['Home', 'Support', 'Contact'];
+
   login() {
     this.touch = true;
 

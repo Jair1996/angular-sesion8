@@ -7,13 +7,27 @@
       <div class="mb-3 row">
         <label for="txtUser" class="col-sm-2 col-form-label">Usuario</label>
         <div class="col-sm-10">
-          <input [(ngModel)]="formulario.usuario" name="usuario" type="text" class="form-control" id="txtUser">
+          <input
+            [(ngModel)]="formulario.usuario"
+            name="usuario"
+            type="text"
+            class="form-control"
+            id="txtUser"
+          />
         </div>
       </div>
       <div class="mb-3 row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label"
+          >Password</label
+        >
         <div class="col-sm-10">
-          <input [(ngModel)]="formulario.password" name="password" type="password" class="form-control" id="inputPassword">
+          <input
+            [(ngModel)]="formulario.password"
+            name="password"
+            type="password"
+            class="form-control"
+            id="inputPassword"
+          />
         </div>
       </div>
       <div class="mt-4">
@@ -21,9 +35,20 @@
       </div>
     </form>
     <section *ngIf="touch" class="mt-4">
-      <div *ngIf="esCorrecto; else incorrecto">Bienvenido Angular</div>
+      <div *ngIf="esCorrecto; else incorrecto">
+        Bienvenido Angular
+        <ul class="list-group mt-4">
+          <li *ngFor="let item of navItems" class="list-group-item">
+            <a href="#">
+              {{ item }}
+            </a>
+          </li>
+        </ul>
+      </div>
       <ng-template #incorrecto>
-        <div class="text-danger">Credenciales Incorrectas, inténtelo nuevamente</div>
+        <div class="text-danger">
+          Credenciales Incorrectas, inténtelo nuevamente
+        </div>
       </ng-template>
     </section>
   </section>
