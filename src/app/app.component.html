@@ -3,7 +3,7 @@
     <header class="mb-5">
       <p class="fs-1">Login</p>
     </header>
-    <form>
+    <form autocomplete="off" (ngSubmit)="login()">
       <div class="mb-3 row">
         <label for="txtUser" class="col-sm-2 col-form-label">Usuario</label>
         <div class="col-sm-10">
@@ -20,9 +20,11 @@
         <button type="submit" class="btn btn-outline-primary">Login</button>
       </div>
     </form>
-    <section class="mt-4">
-      <div>Bienvenido Angular</div>
-      <div class="text-danger">Credenciales Incorrectas, inténtelo nuevamente</div>
+    <section *ngIf="touch" class="mt-4">
+      <div *ngIf="esCorrecto; else incorrecto">Bienvenido Angular</div>
+      <ng-template #incorrecto>
+        <div class="text-danger">Credenciales Incorrectas, inténtelo nuevamente</div>
+      </ng-template>
     </section>
   </section>
 </main>

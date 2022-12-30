@@ -20,4 +20,22 @@ export class AppComponent {
     usuario: '',
     password: '',
   };
+
+  esCorrecto: boolean = false;
+
+  touch: boolean = false;
+
+  login() {
+    this.touch = true;
+
+    if (
+      this.formulario.usuario === this.credenciales.usuario &&
+      this.formulario.password === this.credenciales.password
+    ) {
+      this.esCorrecto = true;
+      return;
+    }
+
+    this.esCorrecto = false;
+  }
 }
